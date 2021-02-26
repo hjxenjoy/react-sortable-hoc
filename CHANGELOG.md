@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/hjxenjoy/react-sortable-hoc/compare/v1.12.0...v2.0.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* **findDOMNode:** replace findDOMNode with ref ([698bf35](https://github.com/hjxenjoy/react-sortable-hoc/commit/698bf35))
+
+
+
 <a name="1.12.0"></a>
 # [1.12.0](https://github.com/hjxenjoy/react-sortable-hoc/compare/v1.1.0...v1.12.0) (2021-02-26)
 
