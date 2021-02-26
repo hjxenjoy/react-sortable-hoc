@@ -109,17 +109,14 @@ export type WrappedComponent<P> =
 
 export function SortableContainer<P>(
   wrappedComponent: WrappedComponent<P>,
-  config?: Config,
 ): React.ComponentClass<P & SortableContainerProps>;
 
 export function SortableElement<P>(
   wrappedComponent: WrappedComponent<P>,
-  config?: Config,
 ): React.ComponentClass<P & SortableElementProps>;
 
 export function SortableHandle<P>(
   wrappedComponent: WrappedComponent<P>,
-  config?: Config,
 ): React.ComponentClass<P>;
 
 export function arrayMove<T>(
