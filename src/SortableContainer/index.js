@@ -1,7 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import {findDOMNode} from 'react-dom';
-import invariant from 'invariant';
 
 import Manager from '../Manager';
 import {isSortableHandle} from '../SortableHandle';
@@ -38,15 +35,14 @@ import {
   defaultKeyCodes,
 } from './props';
 
-export default function sortableContainer(
-  WrappedComponent,
-  config = {withRef: false},
-) {
+export default function sortableContainer(WrappedComponent) {
   return class WithSortableContainer extends React.Component {
     constructor(props) {
       super(props);
 
       validateProps(props);
+
+      this.innerRef = React.createRef();
 
       this.manager = new Manager();
       this.events = {
@@ -885,19 +881,14 @@ export default function sortableContainer(
     };
 
     getWrappedInstance() {
-      invariant(
-        config.withRef,
-        'To access the wrapped instance, you need to pass in {withRef: true} as the second argument of the SortableContainer() call',
-      );
-
-      return this.refs.wrappedInstance;
+      return this.innerRef.current;
     }
 
     getContainer() {
       const {getContainer} = this.props;
 
       if (typeof getContainer !== 'function') {
-        return findDOMNode(this);
+        return this.innerRef.current;
       }
 
       return getContainer(
@@ -1039,11 +1030,12 @@ export default function sortableContainer(
     };
 
     render() {
-      const ref = config.withRef ? 'wrappedInstance' : null;
-
       return (
         <SortableContext.Provider value={{manager: this.manager}}>
-          <WrappedComponent ref={ref} {...omit(this.props, omittedProps)} />
+          <WrappedComponent
+            ref={this.innerRef}
+            {...omit(this.props, omittedProps)}
+          />
         </SortableContext.Provider>
       );
     }
