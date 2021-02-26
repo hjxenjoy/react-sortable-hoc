@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/hjxenjoy/react-sortable-hoc/compare/v2.0.1...v2.0.2) (2021-02-26)
+
+
+### Bug Fixes
+
+* update d.ts ([93db12c](https://github.com/hjxenjoy/react-sortable-hoc/commit/93db12c))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/hjxenjoy/react-sortable-hoc/compare/v1.12.0...v2.0.1) (2021-02-26)
 
