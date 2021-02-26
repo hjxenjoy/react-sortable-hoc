@@ -1,13 +1,13 @@
 {
-  "name": "react-sortable-hoc",
-  "version": "1.11.0",
+  "name": "react-sortable-hoc2",
+  "version": "0.0.1",
   "description": "Set of higher-order components to turn any list into a sortable, touch-friendly, animated list",
   "author": {
-    "name": "Clauderic Demers",
-    "email": "me@ced.io"
+    "name": "Jinxin Hu",
+    "email": "hjxenjoy@gmail.com"
   },
-  "user": "clauderic",
-  "homepage": "https://github.com/clauderic/react-sortable-hoc",
+  "user": "hjxenjoy",
+  "homepage": "https://github.com/hjxenjoy/react-sortable-hoc",
   "source": "src/index.js",
   "main": "dist/react-sortable-hoc.js",
   "umd:main": "dist/react-sortable-hoc.umd.js",
@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/clauderic/react-sortable-hoc.git"
+    "url": "https://github.com/hjxenjoy/react-sortable-hoc.git"
   },
   "bugs": {
-    "url": "https://github.com/clauderic/react-sortable-hoc/issues"
+    "url": "https://github.com/hjxenjoy/react-sortable-hoc/issues"
   },
   "keywords": [
     "react",
@@ -48,14 +48,13 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.2.0",
     "invariant": "^2.2.4",
     "prop-types": "^15.5.7"
   },
   "peerDependencies": {
     "prop-types": "^15.5.7",
-    "react": "^0.14.0 || ^15.0.0 || ^16.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0 || ^16.0.0"
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -80,16 +79,13 @@
     "html-webpack-plugin": "^2.16.1",
     "husky": "^3.0.4",
     "lodash": "^4.12.0",
-    "node-sass": "^4.11.0",
+    "sass": "^1.32.8",
     "postcss": "^7.0.7",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
-    "react": "^16.7.0",
-    "react-addons-pure-render-mixin": "^15.0.2",
-    "react-addons-shallow-compare": "^15.1.0",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^16.7.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-infinite": "^0.13.0",
     "react-inspector": "^3.0.2",
     "react-tiny-virtual-list": "^2.0.1",

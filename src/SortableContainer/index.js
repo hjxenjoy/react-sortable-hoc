@@ -5,6 +5,7 @@ import invariant from 'invariant';
 
 import Manager from '../Manager';
 import {isSortableHandle} from '../SortableHandle';
+import SortableContext from '../context';
 
 import {
   cloneNode,
@@ -60,15 +61,6 @@ export default function sortableContainer(
     static displayName = provideDisplayName('sortableList', WrappedComponent);
     static defaultProps = defaultProps;
     static propTypes = propTypes;
-    static childContextTypes = {
-      manager: PropTypes.object.isRequired,
-    };
-
-    getChildContext() {
-      return {
-        manager: this.manager,
-      };
-    }
 
     componentDidMount() {
       const {useWindowAsScrollContainer} = this.props;
@@ -648,9 +640,9 @@ export default function sortableContainer(
 
         // For keyboard sorting, we want user input to dictate the position of the nodes
         const mustShiftBackward =
-          isKeySorting && (index > this.index && index <= prevIndex);
+          isKeySorting && index > this.index && index <= prevIndex;
         const mustShiftForward =
-          isKeySorting && (index < this.index && index >= prevIndex);
+          isKeySorting && index < this.index && index >= prevIndex;
 
         const translate = {
           x: 0,
@@ -1049,7 +1041,11 @@ export default function sortableContainer(
     render() {
       const ref = config.withRef ? 'wrappedInstance' : null;
 
-      return <WrappedComponent ref={ref} {...omit(this.props, omittedProps)} />;
+      return (
+        <SortableContext.Provider value={{manager: this.manager}}>
+          <WrappedComponent ref={ref} {...omit(this.props, omittedProps)} />
+        </SortableContext.Provider>
+      );
     }
 
     get helperContainer() {
