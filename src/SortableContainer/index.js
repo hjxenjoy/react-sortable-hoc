@@ -891,9 +891,7 @@ export default function sortableContainer(WrappedComponent) {
         return this.innerRef.current;
       }
 
-      return getContainer(
-        config.withRef ? this.getWrappedInstance() : undefined,
-      );
+      return getContainer(this.getWrappedInstance());
     }
 
     handleKeyDown = (event) => {
